@@ -17,6 +17,7 @@ public class SpringContext {
         //get all the types from class path with @Bean
         Set<Class<?>> beans = new Reflections("org.example")
                 .getTypesAnnotatedWith(Bean.class);
+        
         beans.forEach(aClass -> {
             //collecting beans
             String name = aClass.getAnnotation(Bean.class).name();
